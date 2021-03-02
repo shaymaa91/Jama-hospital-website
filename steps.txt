@@ -1,0 +1,29 @@
+DB Tables:
+1. static pages: vission, mission, about us
+2. slider
+3. departments
+4. management>>admin >> registor,login,reset pass
+4. doctors >> registor,login,reset pass, schedule
+5. patiants >> registor,login,reset pass, appointment detials
+
+
+**Home page**
+1. top menue
+2. slider
+3. our doctors
+4. departments
+5. appointment
+
+**patiants
+1. registor
+2. login
+3. reset pass
+4. panel >> change pass, patiant history, profile
+
+**Doctors
+1. registor
+2. login
+3. reset pass
+4. panel >> change pass, appointments schedule, profile
+
+
