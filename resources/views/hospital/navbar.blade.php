@@ -1,25 +1,42 @@
-<div class="bs-example">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background:#fefefe;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-      <a href="/" class="navbar-brand"><img src="{{asset('static/images/loader.png')}}"></a>
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<!-- PRE LOADER -->
+<section class="preloader">
+          <div class="spinner">
 
-      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-        <div class="navbar-nav">
+               <span class="spinner-rotate"></span>
 
-          <a href="" class="nav-item nav-link">الرئيسية</a>
-          <a href="/doctorclick" class="nav-item nav-link">الاقسام</a>
-          <a href="/patientclick" class="nav-item nav-link">من نحن</a>
+          </div>
+     </section>
 
 
-        </div>
 
-        <div class="navbar-nav">
-          <a href="/aboutus" class="nav-item nav-link">تواصل معنا</a>
-          <a href="{{asset('login')}}" class="nav-item nav-link">تسجيل دخول</a>
-        </div>
 
-      </div>
-    </nav>
-  </div>
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+               <div class="collapse navbar-collapse navbar-right">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="index.html" class="navbar-brand">مستشفى جاما الطبي <i class="fa fa-heartbeat"
+                              aria-hidden="true"></i></a>
+
+               </div>
+               <!-- MENU LINKS -->
+               <div class="navbar-header">
+                    <ul class="nav navbar-nav" >
+                         <li class="signin-btn"><a href="{{asset('login')}}">تسجيل دخول</a></li>
+                         <li class="appointment-btn"><a href="#appointment">حجز موعد</a></li>
+                         <li><a href="#google-map" class="smoothScroll">اتصل بنا</a></li>                         
+                         <li><a href="#about" class="smoothScroll">من نحن</a></li>
+                         <li><a href="#news" class="smoothScroll">أخبار</a></li>
+                         <li><a href="#team" class="smoothScroll">الأطباء</a></li>
+                         <li><a href="#top" class="smoothScroll">الرئيسية</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>

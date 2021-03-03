@@ -32,20 +32,18 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
-// Route::prefix("admin")->middleware(['auth'])->group(function(){    
-//     Route::get("/",[HomeController::class,'index']);
-    
-//     Route::resource("user",UserController::class);
-//     Route::get("user/{id}/delete",[UserController::class,'destroy'])->name("users.delete");
-   
-// });
+Route::prefix("admin")->middleware(['auth'])->group(function(){   
+    Route::get("/",[HomeController::class,'index']);
 
-Route::resource("user",UserController::class);
-Route::get("user/{id}/delete",[UserController::class,'destroy'])->name("users.delete");
+    Route::resource("user",UserController::class);
+    Route::get("user/{id}/delete",[UserController::class,'destroy'])->name("users.delete");
 
-Route::get("change-pass",[ChangePasswordController::class,'edit'])->name("password.edit");
-Route::post("change-pass",[ChangePasswordController::class,'update'])->name("password.changed");
+    Route::get("change-pass",[ChangePasswordController::class,'edit'])->name("password.edit");
+    Route::post("change-pass",[ChangePasswordController::class,'update'])->name("password.changed");
 
-Route::get("profile",[UserProfileController::class,'edit'])->name("profile.edit");
-Route::put("profile",[UserProfileController::class,'update'])->name("profile.update");
+    Route::get("profile",[UserProfileController::class,'edit'])->name("profile.edit");
+    Route::put("profile",[UserProfileController::class,'update'])->name("profile.update");
+});
+
+
    
