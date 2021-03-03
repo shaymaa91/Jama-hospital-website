@@ -26,7 +26,7 @@ class CreateDoctorsTable extends Migration
             $table->double('salary');
             $table->string('image');
             $table->text('short_bio');
-            $table->boolean('status');
+            $table->string('status');
             $table->timestamps();
         });
     }

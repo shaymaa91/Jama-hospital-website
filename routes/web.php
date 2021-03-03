@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePage\HomePageController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\DoctorController;
 use App\Http\Controllers\Admin\UserProfileController;
+use App\Http\Controllers\Admin\dashboardController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 
 
@@ -48,4 +50,6 @@ Route::post("change-pass",[ChangePasswordController::class,'update'])->name("pas
 
 Route::get("profile",[UserProfileController::class,'edit'])->name("profile.edit");
 Route::put("profile",[UserProfileController::class,'update'])->name("profile.update");
-   
+Route::resource("doctor",DoctorController::class);
+Route::get("doctor/{id}/delete",[DoctorController::class,'destroy'])->name("doctor.delete");
+Route::get("dashboard",[dashboardController::class,'index']);

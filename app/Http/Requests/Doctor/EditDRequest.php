@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\User;
+namespace App\Http\Requests\Doctor;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateRequest extends FormRequest
+class EditDRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,10 +23,10 @@ class CreateRequest extends FormRequest
      */
     public function rules()
     {
+        $id = $this->route('doctor');
         return [
-            'name'=>'required|max:50',
-            'email'=>'required|email|max:50|unique:users',
-            'password'=>'required|min:7'
+           // 'fullname'=>'required|max:50',
+           // 'email'=>'required|email|max:50|unique:users,email,' . $id . ',id'
         ];
     }
 }
