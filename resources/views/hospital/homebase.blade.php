@@ -86,7 +86,7 @@
 
                 <div class="col-md-6 col-sm-6">
                     <div class="about-info">
-                        <h2 class="wow fadeInUp" data-wow-delay="0.1s">Our Doctors</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.1s">أطباء جاما</h2>
                     </div>
                 </div>
 
@@ -97,8 +97,8 @@
                         <img src="{{asset('hospital-theme/images/team-image1.jpg')}}" class="img-responsive" alt="">
 
                         <div class="team-info">
-                            <h3>Nate Baston</h3>
-                            <p>General Principal</p>
+                            <h3>مشعل الأحمد</h3>
+                            <p>أخصائي أنف وحنجرة</p>
                             <div class="team-contact-info">
                                 <p><i class="fa fa-phone"></i> 010-020-0120</p>
                                 <p><i class="fa fa-envelope-o"></i> <a href="#">general@company.com</a></p>
@@ -117,8 +117,8 @@
                         <img src="{{asset('hospital-theme/images/team-image2.jpg')}}" class="img-responsive" alt="">
 
                         <div class="team-info">
-                            <h3>Jason Stewart</h3>
-                            <p>Pregnancy</p>
+                            <h3>رياض الممدوح</h3>
+                            <p>أخصائي عظام ومفاصل</p>
                             <div class="team-contact-info">
                                 <p><i class="fa fa-phone"></i> 010-070-0170</p>
                                 <p><i class="fa fa-envelope-o"></i> <a href="#">pregnancy@company.com</a></p>
@@ -138,8 +138,8 @@
                         <img src="{{asset('hospital-theme/images/team-image3.jpg')}}" class="img-responsive" alt="">
 
                         <div class="team-info">
-                            <h3>Miasha Nakahara</h3>
-                            <p>Cardiology</p>
+                            <h3>سوار خلف</h3>
+                            <p>أخصائية جلدية</p>
                             <div class="team-contact-info">
                                 <p><i class="fa fa-phone"></i> 010-040-0140</p>
                                 <p><i class="fa fa-envelope-o"></i> <a href="#">cardio@company.com</a></p>
@@ -166,7 +166,7 @@
                 <div class="col-md-12 col-sm-12">
                     <!-- SECTION TITLE -->
                     <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
-                        <h2>Latest News</h2>
+                        <h2>أخبار جاما</h2>
                     </div>
                 </div>
 
@@ -178,13 +178,13 @@
                         </a>
                         <div class="news-info">
                             <span>March 08, 2018</span>
-                            <h3><a href="news-detail.html">About Amazing Technology</a></h3>
-                            <p>Maecenas risus neque, placerat volutpat tempor ut, vehicula et felis.</p>
+                            <h3><a href="news-detail.html">فريق طبي يجري اختبارات لبرتوكل علاجي لمرضي كورونا</a></h3>
+                            <p>قام فريق طبي بأجراءاختبارات سريرية لبرتوكول علاجي لمرضي كرونا بحقن بلازما المتع...</p>
                             <div class="author">
                                 <img src="{{asset('hospital-theme/images/author-image.jpg')}}" class="img-responsive" alt="">
                                 <div class="author-info">
-                                    <h5>Jeremie Carlson</h5>
-                                    <p>CEO / Founder</p>
+                                    <h5>محمد الأسمر</h5>
+                                    <p>المدير العام</p>
                                 </div>
                             </div>
                         </div>
@@ -197,15 +197,16 @@
                         <a href="news-detail.html">
                             <img src="{{asset('hospital-theme/images/news-image2.jpg')}}" class="img-responsive" alt="">
                         </a>
+                       
                         <div class="news-info">
-                            <span>February 20, 2018</span>
-                            <h3><a href="news-detail.html">Introducing a new healing process</a></h3>
-                            <p>Fusce vel sem finibus, rhoncus massa non, aliquam velit. Nam et est ligula.</p>
+                            <span>March 08, 2018</span>
+                            <h3><a href="news-detail.html">فريق طبي يجري استئصال ورم كبير لسيدة مسنة </a></h3>
+                            <p> في عملية جراحة كبيرة ومعقدة نجح فريق طبي جراحي متخصص بمستشفى جاما الطبي بالخبر...</p>
                             <div class="author">
                                 <img src="{{asset('hospital-theme/images/author-image.jpg')}}" class="img-responsive" alt="">
                                 <div class="author-info">
-                                    <h5>Jason Stewart</h5>
-                                    <p>General Director</p>
+                                    <h5>محمد الأسمر</h5>
+                                    <p>المدير العام</p>
                                 </div>
                             </div>
                         </div>
@@ -219,14 +220,14 @@
                             <img src="{{asset('hospital-theme/images/news-image3.jpg')}}" class="img-responsive" alt="">
                         </a>
                         <div class="news-info">
-                            <span>January 27, 2018</span>
-                            <h3><a href="news-detail.html">Review Annual Medical Research</a></h3>
-                            <p>Vivamus non nulla semper diam cursus maximus. Pellentesque dignissim.</p>
+                            <span>March 08, 2018</span>
+                            <h3><a href="news-detail.html">اجراء عمليتين لزراعه خلايا جذعية ذاتية وإنهاء معاناة مريضتين</a></h3>
+                            <p>تمكن فريق طبي متخصص بزراعة الخلايا الجذعية بمستشفى جاما الطبي بفضل الله من إجراء ...</p>
                             <div class="author">
                                 <img src="{{asset('hospital-theme/images/author-image.jpg')}}" class="img-responsive" alt="">
                                 <div class="author-info">
-                                    <h5>Andrio Abero</h5>
-                                    <p>Online Advertising</p>
+                                    <h5>محمد الأسمر</h5>
+                                    <p>المدير العام</p>
                                 </div>
                             </div>
                         </div>

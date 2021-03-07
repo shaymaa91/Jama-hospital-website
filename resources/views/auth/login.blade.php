@@ -30,7 +30,7 @@
     </div>
     <div class="m-login__form-action">
         <button type="submit" id=""
-            class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary">تسجيل
+            class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary" style="background-color: #a5c422; border-color: #a5c422;">تسجيل
             الدخول</button>
     </div>
 </form>

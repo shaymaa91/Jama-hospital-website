@@ -21,7 +21,7 @@
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <a href="index.html" class="navbar-brand">مستشفى جاما الطبي <i class="fa fa-heartbeat"
+                    <a href="{{route('front.home.page')}}" class="navbar-brand">مستشفى جاما الطبي <i class="fa fa-heartbeat"
                               aria-hidden="true"></i></a>
 
                </div>

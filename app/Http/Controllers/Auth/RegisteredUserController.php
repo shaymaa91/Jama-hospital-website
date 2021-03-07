@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -36,16 +37,34 @@ class RegisteredUserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
+            'role_id' => 'required'
         ]);
-
-        Auth::login($user = User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-        ]));
-
-        event(new Registered($user));
-
-        return redirect(RouteServiceProvider::HOME);
+            'role_id' => $request->role_id,
+            'status'=> 1
+        ]);
+        if($request->role_id==1){
+            $user->assignRole('admin');
+            Auth::login($user);
+            event(new Registered($user));
+            return redirect(asset('admin/'));
+        }
+        else if($request->role_id==2){
+            $user->assignRole('doctor');
+            Auth::login($user);
+            event(new Registered($user));
+            return redirect(asset('doctor/'));
+        }
+        else {
+            $user->assignRole('patient');
+            Auth::login($user);
+            event(new Registered($user));
+            return redirect(asset('patient/'));
+            //return redirect(RouteServiceProvider::HOME);
+        }
+        
     }
 }

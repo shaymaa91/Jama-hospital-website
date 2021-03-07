@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserProfileController;
 use App\Http\Controllers\Auth\ChangePasswordController;
+use App\Http\Controllers\Doctor\DoctorProfileController;
 
 
 
@@ -23,7 +24,7 @@ use App\Http\Controllers\Auth\ChangePasswordController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/',[HomePageController::class,'index']);
+Route::get('/',[HomePageController::class,'index'])->name("front.home.page");
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -32,7 +33,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
-Route::prefix("admin")->middleware(['auth'])->group(function(){   
+Route::prefix("admin")->middleware(['auth','role:admin'])->group(function(){   
     Route::get("/",[HomeController::class,'index']);
 
     Route::resource("user",UserController::class);
@@ -45,5 +46,10 @@ Route::prefix("admin")->middleware(['auth'])->group(function(){
     Route::put("profile",[UserProfileController::class,'update'])->name("profile.update");
 });
 
+Route::prefix("doctor")->middleware(['auth','role:doctor'])->group(function(){   
+    Route::get("/",[DoctorProfileController::class,'index']);
+
+    
+});
 
    

@@ -62,9 +62,12 @@
             <div class="m-grid__item m-grid__item--fluid	m-login__wrapper">
                 <div class="m-login__container">
                     <div class="m-login__logo">
-                        <a href="#">
-                            <img src="{{asset('metronic/assets/app/media/img/logos/logo-1.png')}}">
-                        </a>
+                        <i class="fa fa-heartbeat" aria-hidden="true" style="color:#a5c422;font-size:44px;"></i>
+                        <br>
+                        <a href="{{route('front.home.page')}}" class="navbar-brand"
+                            style="text-decoration:none;color:#000;font-size:28px;font-weight:600;">مستشفى جاما
+                            الطبي</a>
+                        <br><br>
                     </div>
                     <div class="m-login__signup">
                         <div class="m-login__head">
