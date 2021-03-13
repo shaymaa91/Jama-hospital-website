@@ -7,6 +7,7 @@ use App\Models\Doctor;
 use App\Models\specialist;
 use App\Models\departments;
 use App\Models\city;
+use App\Models\User;
 use App\Http\Requests\Doctor\CreateDRequest;
 use App\Http\Requests\Doctor\EditDRequest;
 use Spatie\Permission\Models\Role;
@@ -37,14 +38,20 @@ class DoctorController extends Controller
     public function store(CreateDRequest $request)
     {
         $requestData=$request->all();
+        $requestData['password']=bcrypt('123456789');
 if($request->image){
     $fileName=$request->image->store('public/images');
     $imageName=$request->image->hashName();
     $requestData['image']=$imageName;
 
     }
-    
-        $doctor= Doctor::create($requestData);   
+    $user=User::create($requestData);
+    $requestData['user_id']=$user->id;
+   
+    $user->assignRole('doctor');
+ 
+  
+       Doctor::create($requestData);   
          
        
         Session::flash("msg","s: تمت عملية الاضافة بنجاح");
@@ -85,10 +92,16 @@ if($request->image){
 
     public function destroy($id)
     {
+      
         $itemDB = Doctor
         ::find($id);
+        $itemDB->email=$itemDB->email.$id.'-deleted';
         $itemDB->delete();
         session()->flash("msg","w:تم حذف المستخدم بنجاح");
         return redirect(route("doctor.index"));
     }
+   
+
+
+
 }

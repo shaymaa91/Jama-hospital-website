@@ -16,6 +16,9 @@ class CreateDoctorsTable extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();            
             $table->string('fullname');
+            $table->string('email');
+            $table->string('gender');
+            $table->string('username');
             $table->string('degree');
             $table->date('date_of_birth');
             $table->string('specialist');
@@ -27,6 +30,10 @@ class CreateDoctorsTable extends Migration
             $table->string('image');
             $table->text('short_bio');
             $table->string('status');
+            $table->softDeletes();
+         
+
+            
             $table->timestamps();
         });
     }

@@ -2423,10 +2423,6 @@
                 "security",
                 "spatie"
             ],
-            "support": {
-                "issues": "https://github.com/spatie/laravel-permission/issues",
-                "source": "https://github.com/spatie/laravel-permission/tree/4.0.0"
-            },
             "funding": [
                 {
                     "url": "https://github.com/spatie",

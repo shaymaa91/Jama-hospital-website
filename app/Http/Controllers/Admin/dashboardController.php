@@ -14,8 +14,8 @@ class dashboardController extends Controller
     public function index(Request $request)
     {
         $count=DB::table('doctors')->where('id','>=',12)->get()->count();
-        $counts=DB::table('users')->where('id','>=',2)->get()->count();
-        return view('Admin.dashboard.index',compact('count','counts'));
+       
+        return view('Admin.dashboard.index',compact('count'));
 
       
     } }

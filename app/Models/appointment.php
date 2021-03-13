@@ -7,30 +7,21 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class Doctor extends Authenticatable
+class appointment extends Authenticatable
 {
-    use HasFactory, Notifiable, HasRoles,SoftDeletes;
+    use HasFactory, Notifiable, HasRoles;
 
 
     protected $fillable = [
-        'fullname',
-        'degree',
-        'date_of_birth',
-        'specialist',
-        'department',
-        'city',
-        'address',
-        'mobile',
-        'salary',
-        'image',
-        'short_bio',
-        'status',
-        'username',
-        'gender',
-        'email',
+      'doctor_id',
+      'patient_id',
+      'day',
+      'starttime',
+      'endtime',
+      'note',
+      'status_id',
     ];
 
 

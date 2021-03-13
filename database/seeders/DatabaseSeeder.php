@@ -15,6 +15,13 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         
-        \App\Models\sender_info::factory(22)->create();
+      //\App\Models\sender_info::factory(22)->create();
+
+        $this->call([
+
+
+        UsersSeeder::class,
+
+        ]);
     }
 }

@@ -20,7 +20,8 @@ class UserController extends Controller
         $q = $request->q;
         $adminRole = Role::findByName('admin');
         $items = $adminRole->users()->whereRaw('(email like ? or name like ?)',["%$q%","%$q%"])
-            ->paginate(10)
+           
+        
             ->appends(['q'=>$q]);
 
         return view("admin.user.index")->with('items',$items);
@@ -37,8 +38,10 @@ class UserController extends Controller
     {
         $requestData = $request->all();
         $requestData['password'] = bcrypt($requestData['password']);
-        $user = User::create($requestData);        
+      
+        $user = User::create($requestData);    
         $user->assignRole('admin');
+      
         Session::flash("msg","s: تمت عملية الاضافة بنجاح");
         return redirect(route("user.create"));
     }

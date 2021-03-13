@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Doctor;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class CreateDRequest extends FormRequest
 {
@@ -25,6 +26,7 @@ class CreateDRequest extends FormRequest
     {
         return [
             'fullname'=>'required|max:50',
+            'email' => 'required|email|unique:doctors',
             'degree'=>'required|max:50',
            'date_of_birth'=> 'required|max:50',
            'username'=>'required|max:50',
