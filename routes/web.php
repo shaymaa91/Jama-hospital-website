@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePage\HomePageController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\DoctorController;
+use App\Http\Controllers\Admin\SpecializeController;
 use App\Http\Controllers\Admin\UserProfileController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Doctor\DoctorProfileController;
@@ -36,6 +38,10 @@ require __DIR__.'/auth.php';
 Route::prefix("admin")->middleware(['auth','role:admin'])->group(function(){   
     Route::get("/",[HomeController::class,'index']);
 
+    Route::resource("Specialize",SpecializeController::class);
+    Route::get("Specialize/{id}/delete",[SpecializeController::class,'destroy'])->name("Specialize.delete");
+
+
     Route::resource("user",UserController::class);
     Route::get("user/{id}/delete",[UserController::class,'destroy'])->name("users.delete");
 
@@ -44,6 +50,10 @@ Route::prefix("admin")->middleware(['auth','role:admin'])->group(function(){
 
     Route::get("profile",[UserProfileController::class,'edit'])->name("profile.edit");
     Route::put("profile",[UserProfileController::class,'update'])->name("profile.update");
+
+    Route::resource("doctors",DoctorController::class);
+    Route::get("doctors/{id}/delete",[DoctorController::class,'destroy'])->name("doctors.delete");
+
 });
 
 Route::prefix("doctor")->middleware(['auth','role:doctor'])->group(function(){   
