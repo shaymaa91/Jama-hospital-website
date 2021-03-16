@@ -12,8 +12,8 @@
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <div style="color:#ffffff;" class="wow fadeInUp footer-copyright">
-          <p>Made in Palestine <br>
-            Copyright &copy; 2021 LamaJaber </p>
+          <p><br>
+            Copyright &copy; 2021 لما جابر </p>
         </div>
       </div>
     </div>
