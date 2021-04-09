@@ -17,6 +17,7 @@ http://www.tooplate.com/view/2098-health
     <meta name="keywords" content="">
     <meta name="author" content="Tooplate">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="_token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="{{asset('hospital-theme/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('hospital-theme/css/font-awesome.min.css')}}">
@@ -26,6 +27,7 @@ http://www.tooplate.com/view/2098-health
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{asset('hospital-theme/css/tooplate-style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 </head>
 
@@ -49,6 +51,30 @@ http://www.tooplate.com/view/2098-health
     <script src="{{asset('hospital-theme/js/smoothscroll.js')}}"></script>
     <script src="{{asset('hospital-theme/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('hospital-theme/js/custom.js')}}"></script>
+
+    <script type="text/javascript">
+    $('#q').on('keyup', function() {
+        $value = $(this).val();
+        $.ajax({
+            type: 'get',
+            url: '{{URL::to('
+            search ')}}',
+            data: {
+                'q': $value
+            },
+            success: function(data) {
+                $('tbody').html(data);
+            }
+        });
+    })
+    </script>
+    <script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'csrftoken': '{{ csrf_token() }}'
+        }
+    });
+    </script>
 
 
 </body>

@@ -25,36 +25,36 @@ class DoctorController extends Controller
      */
     public function index(Request $request)
     {
-        
+
             $q = $request->q;
             $department = $request->department;
             $status = $request->status;
-    
+
             $query = doctor::whereRaw('true');
-            
+
             if($status!=''){
                 $query->where('status',$status);
             }
-    
+
             if($department){
                 $query->where('department_id',$department);
             }
-            
+
             if($q){
-                $query->whereRaw('(title like ? or slug like ?)',["%$q%","%$q%"]);
+                $query->whereRaw('(fullname like ?)',["%$q%"]);
             }
-    
-            
+
+
             $doctors = $query->paginate(7)
             ->appends([
                 'q'     =>$q,
                 'department'=>$department,
                 'status'=>$status
             ]);
-    
+
             $departments = department::all();
-            return view("admin.doctor.index",compact('doctors','departments')); 
-            
+            return view("admin.doctor.index",compact('doctors','departments'));
+
     }
 
     /**
@@ -69,7 +69,7 @@ class DoctorController extends Controller
         $departments = department::all();
         $cities = city::all();
         return view("admin.doctor.create",compact('doctors','Specializes','departments','cities'));
-        
+
     }
 
     /**
@@ -80,11 +80,11 @@ class DoctorController extends Controller
      */
     public function store(CreatDoctorRequest $request)
     {
-        $fileName = $request->image->store("public/assets/img"); 
+        $fileName = $request->image->store("public/assets/img/doctors/");
         $imageName = $request->image->hashName();
-        
+
         $requestData = $request->all();
-        $requestData['image'] = $imageName;        
+        $requestData['image'] = $imageName;
         $requestData['password'] = bcrypt($requestData['password']);
         $userData=$requestData;
         $userData['name']=$requestData['fullname'];
@@ -94,11 +94,11 @@ class DoctorController extends Controller
         $lastUserId=$user->id;
         $user->assignRole('doctor');
 
-        //insert on doctor table           
+        //insert on doctor table
         $doctorData = $requestData;
         $doctorData['user_id'] = $lastUserId;
         doctor::create($doctorData);
-        
+
         Session::flash("msg","s: تمت الإضافة بنجاح");
         return redirect(route("doctors.index"));
     }
@@ -135,8 +135,8 @@ class DoctorController extends Controller
             session()->flash("msg","e:العنوان غير صحيح");
             return redirect(route("doctors.index"));
         }
-        
-        
+
+
         return view("admin.doctor.edit",compact('doctor','specializes','departments','cities'));
     }
 
@@ -150,15 +150,15 @@ class DoctorController extends Controller
     public function update(Request $request, $id)
     {
         $doctorDB = doctor::find($id);
-        if($request['image']){            
+        if($request['image']){
             $requestData = $request->all();
-            $fileName = $request->image->store("public/assets/img");
+            $fileName = $request->image->store("public/assets/img/doctors/");
             $imageName = $request->image->hashName();
-            $requestData['image'] = $imageName;            
+            $requestData['image'] = $imageName;
             $doctorDB->update($requestData);
         }
         else{
-            
+
             doctor::where('id', $id)->update(array('fullname' => $request['fullname'],
                                                      'degree'=> $request['degree'],
                                                      'date_of_birth'=> $request['date_of_birth'],
@@ -171,8 +171,8 @@ class DoctorController extends Controller
                                                      'short_bio'=> $request['short_bio'],
                                                      'status'=> $request['status']));
         }
-        
-        
+
+
         session()->flash("msg","s:تم تعديل المنتج بنجاح");
         return redirect(route("doctors.index"));
     }

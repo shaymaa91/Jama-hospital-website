@@ -1,25 +1,25 @@
 @extends("layouts.admin")
-@section("title","اضافة طبيب جديد")
+@section("title","اضافة مريض جديد")
 
 @section("content")
 <div class="m-portlet m-portlet--mobile px-4 py-3">
-    <form enctype="multipart/form-data" method='post' action='{{route("doctors.index")}}'>
+    <form enctype="multipart/form-data" method='post' action='{{route("patients.index")}}'>
         @csrf
         <div class='m-form'>
             <div class="m-portlet__body">
                 <div class="m-form__section m-form__section--first">
                     <div class="form-group m-form__group row">
-                        <label class="col-lg-3 col-form-label">اسم الطبيب </label>
+                        <label class="col-lg-3 col-form-label">اسم المريض </label>
                         <div class="col-lg-6">
-                            <input type="text" class="form-control m-input" placeholder="ادخل اسم الطبيب"
+                            <input type="text" class="form-control m-input" placeholder="ادخل اسم المريض"
                                 name="fullname" value='{{ old("fullname") }}'>
                         </div>
                     </div>
                     <div class="form-group m-form__group row">
                         <label for="example-email-input" class="col-3 col-form-label">البريد الإلكتروني</label>
                         <div class="col-6">
-                            <input class="form-control m-input" name="email" type="email" placeholder="doctorname@example.com"
-                                id="example-email-input">
+                            <input class="form-control m-input" name="email" type="email"
+                                placeholder="patientname@example.com" id="example-email-input">
                         </div>
                     </div>
                     <div class="form-group m-form__group row">
@@ -27,13 +27,6 @@
                         <div class="col-6">
                             <input class="form-control m-input" name="password" type="password" value="P@ssw0rd"
                                 id="password">
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 col-form-label">الدرجة العلمية </label>
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control m-input" placeholder="ادخل الدرجة العلمية "
-                                name="degree" value='{{ old("degree") }}'>
                         </div>
                     </div>
 
@@ -46,31 +39,29 @@
                     </div>
 
                     <div class="form-group m-form__group row">
-                        <label class="col-lg-3 col-form-label">الإختصاص </label>
+                        <label class="col-lg-3 col-form-label">فصيلة الدم </label>
                         <div class="col-lg-6">
-                            <select class="form-control" name='specialize_id' id='specialize_id'>
-                                <option selected>-اختر الإختصاص- </option>
-                                @foreach($Specializes as $Specialize)
-                                <option {{old('specialize_id')==$Specialize->id?'selected':''}}
-                                    value='{{$Specialize->id}}'>
-                                    {{$Specialize->name}}</option>
-                                @endforeach
+                            <select class="form-control" name='blood_group' id='blood_group'>
+                                <option selected>-اختر الفصيلة- </option>
+                                <option {{old('blood_group')=='A+'?'selected':''}} value='A+'>
+                                    A+</option>
+                                <option {{old('blood_group')=='A-'?'selected':''}} value='A-'>
+                                    A-</option>
+                                <option {{old('blood_group')=='B+'?'selected':''}} value='B+'>
+                                    B+</option>
+                                <option {{old('blood_group')=='B-'?'selected':''}} value='B-'>
+                                    B-</option>
+                                <option {{old('blood_group')=='O+'?'selected':''}} value='O+'>
+                                    O+</option>
+                                <option {{old('blood_group')=='O-'?'selected':''}} value='O-'>
+                                    O-</option>
+                                <option {{old('blood_group')=='AB'?'selected':''}} value='AB'>
+                                    AB</option>
+
                             </select>
                         </div>
                     </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 col-form-label">القسم </label>
-                        <div class="col-lg-6">
-                            <select class="form-control" name='department_id' id='department_id'>
-                                <option selected>-اختر القسم- </option>
-                                @foreach($departments as $department)
-                                <option {{old('department_id')==$department->id?'selected':''}}
-                                    value='{{$department->id}}'>
-                                    {{$department->title}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
+
 
                     <div class="form-group m-form__group row">
                         <label class="col-lg-3 col-form-label">المدينة </label>
@@ -84,6 +75,7 @@
                             </select>
                         </div>
                     </div>
+
                     <div class="form-group m-form__group row">
                         <label class="col-lg-3 col-form-label">العنوان </label>
                         <div class="col-lg-6">
@@ -100,45 +92,29 @@
                         </div>
                     </div>
 
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 col-form-label">الراتب الشهري </label>
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control m-input" placeholder="ادخل الراتب الشهري "
-                                name="salary" value='{{ old("salary") }}'>
-                        </div>
-                    </div>
+
 
                     <div class="m-form__group form-group row">
-                        <label class=" col-lg-3 col-form-label">الحالة</label>
+                        <label class="col-lg-3 col-form-label" for="details">الصورة الشخصية</label>
+                        <input class="col-lg-6" type='file' name="image" id="image" />
+                    </div>
+                    <div class="m-form__group form-group row">
+                        <label class=" col-lg-3 col-form-label"></label>
                         <div class="m-radio-inline col-lg-6">
                             <label class="m-radio m-radio--solid m-radio--brand">
-                                <input {{old('status')=='1'?"checked":""}} type="radio" name="status" checked=""
-                                    value="1" aria-describedby="account_group-error"> فعال
+                                <input {{old('gender')=='F'?"checked":""}} type="radio" name="gender" checked=""
+                                    value="F" aria-describedby="account_group-error"> ذكر
                                 <span></span>
                             </label>
                             <label class="m-radio m-radio--solid m-radio--brand">
-                                <input {{old('status')=='0'?"checked":""}} type="radio" name="status" value="0"> غير
-                                فعال
+                                <input {{old('gender')=='M'?"checked":""}} type="radio" name="gender" value="M">
+                                أنثى
                                 <span></span>
                             </label>
                         </div>
                         <span class="m-form__help"></span>
                     </div>
 
-                    <div class="m-form__group form-group row">
-                        <label class="col-lg-3 col-form-label" for="details">الصورة الشخصية</label>
-                        <input class="col-lg-6" type='file' name="image" id="image" />
-                    </div>
-
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 col-form-label" for="details">نبذة عن الطبيب</label>
-                        <div class="col-lg-6">
-                            <textarea class="form-control" id="short_bio" name="short_bio"
-                                rows="3">{{ old("short_bio") }}</textarea>
-
-
-                        </div>
-                    </div>
 
                 </div>
             </div>
@@ -148,7 +124,7 @@
                         <div class="col-lg-3"></div>
                         <div class="col-lg-6">
                             <button class="btn btn-primary" type="submit">إضافة</button>
-                            <a href='{{route("doctors.index")}}' class="btn btn-secondary">الغاء الامر</a>
+                            <a href='{{route("patients.index")}}' class="btn btn-secondary">الغاء الامر</a>
                         </div>
                     </div>
                 </div>

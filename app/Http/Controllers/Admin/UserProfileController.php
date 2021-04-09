@@ -20,24 +20,21 @@ class UserProfileController extends Controller
         $user = auth()->user();
         $filename="";
         $requestData= $request->all();
-        
+
         if($request->image){
-            $filename= $request->image->store('public/user-images');
+            $filename= $request->image->store('public/assets/img/admins');
             $imagename= $request->image->hashName();
             $requestData['image'] = $imagename;
         }
         $user->fill($requestData);
         $user->save();
-        $customerDB= Customer::find($request->id);
-        if($customerDB){
-            $customerDB->update($requestData);
-        }
 
-        
-        
-        
-  
-        
+
+
+
+
+
+
         session()->flash('msg','s:تم تعديل الملف الشخصي بنجاح');
         return redirect(route("profile.edit"));
     }

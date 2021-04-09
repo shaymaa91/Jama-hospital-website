@@ -5,10 +5,15 @@ use App\Http\Controllers\HomePage\HomePageController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DoctorController;
+use App\Http\Controllers\Admin\PatientController;
 use App\Http\Controllers\Admin\SpecializeController;
 use App\Http\Controllers\Admin\UserProfileController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Doctor\DoctorProfileController;
+use App\Http\Controllers\Admin\JamaNewsController;
+
+
+
 
 
 
@@ -35,7 +40,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
-Route::prefix("admin")->middleware(['auth','role:admin'])->group(function(){   
+Route::prefix("admin")->middleware(['auth','role:admin'])->group(function(){
     Route::get("/",[HomeController::class,'index']);
 
     Route::resource("Specialize",SpecializeController::class);
@@ -54,12 +59,22 @@ Route::prefix("admin")->middleware(['auth','role:admin'])->group(function(){
     Route::resource("doctors",DoctorController::class);
     Route::get("doctors/{id}/delete",[DoctorController::class,'destroy'])->name("doctors.delete");
 
+    Route::resource("patients",PatientController::class);
+    Route::get("patients/{id}/delete",[PatientController::class,'destroy'])->name("patient.delete");
+
+    Route::resource("news",JamaNewsController::class);
+    Route::get("news/{id}/delete",[JamaNewsController::class,'destroy'])->name("news.delete");
 });
 
-Route::prefix("doctor")->middleware(['auth','role:doctor'])->group(function(){   
-    Route::get("/",[DoctorProfileController::class,'index']);
+// Route::prefix("doctor")->middleware(['auth','role:doctor'])->group(function(){
+//     Route::get("/",[DoctorProfileController::class,'index']);
 
-    
-});
 
-   
+// });
+
+// Route::prefix("doctor")->middleware(['auth','role:patient'])->group(function(){
+//     Route::get("/",[DoctorProfileController::class,'index']);
+
+
+// });
+

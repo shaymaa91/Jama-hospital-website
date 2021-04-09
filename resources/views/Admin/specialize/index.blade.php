@@ -14,7 +14,7 @@
 @endsection
 
 @section("content")
-<div class="m-portlet m-portlet--mobile">
+<div class="m-portlet m-portlet--mobile px-4 py-3">
     <div class="m-portlet__body">
         <form>
             <div class='row mb-3'>
@@ -42,25 +42,22 @@
                     <table class="table table-striped- table-bordered table-hover">
                         <thead>
                             <tr role="row">
-                                <th width='10%'>
+                                <th width='1%'>
                                     <label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand">
                                         <input type="checkbox" value="" class="m-group-checkable">
                                         <span></span>
                                     </label>
                                 </th>
                                 <th>الاسم</th>
-                                <th  width='10%'>الحالة</th>
-
-                                <th width='15%'>
-                                    اخر تحديث</th>
-
-                                <th width='15%'>خيارات</th>
+                                <th>الحالة</th>
+                                <th> اخر تحديث</th>
+                                <th>خيارات</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($items as $item)
                             <tr role="row" class="odd">
-                                <td >
+                                <td>
                                     <label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand">
                                         <input type="checkbox" value="" class="m-checkable">
                                         <span></span>
@@ -80,8 +77,8 @@
                                             class="la la-edit"></i> </a>
                                     <a class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only"
                                         href="{{route('Specialize.delete',$item->id)}}"
-                                        onclick="return confirm('هل انت متأكد من حذف {{$item->name}} ؟')" title="حذف"><i
-                                            class="la la-remove"></i> </a>
+                                        onclick="return confirm('هل انت متأكد من حذف {{$item->name}} ؟')" title="حذف"><i class="flaticon-delete"></i> 
+                                    </a>
 
                                 </td>
                             </tr>

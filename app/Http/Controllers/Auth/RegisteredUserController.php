@@ -44,7 +44,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'status'=> 1
         ]);
-        
-        
+        $user->assignRole('admin');
+
     }
 }

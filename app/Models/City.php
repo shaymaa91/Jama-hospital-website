@@ -16,4 +16,7 @@ class City extends Model
     public function doctors(){
         return $this->hasMany(doctor::class);
     }
+    public function patients(){
+        return $this->hasMany(patient::class);
+    }
 }

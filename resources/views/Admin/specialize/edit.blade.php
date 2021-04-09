@@ -13,7 +13,7 @@
 @endsection
 
 @section("content")
-<div class="m-portlet m-portlet--mobile">
+<div class="m-portlet m-portlet--mobile px-4 py-3">
     <form method="post" action="{{asset('admin/Specialize/'.$item->id)}}">
         @csrf
         @method("put")

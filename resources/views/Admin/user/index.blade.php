@@ -34,8 +34,8 @@
                         id="m_table_1" role="grid" aria-describedby="m_table_1_info" style="width: 1150px;">
                         <thead>
                             <tr role="row">
-                                <th>
-                                    <label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand">
+                                <th width='1%'>
+                                    <label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand ">
                                         <input type="checkbox" value="" class="m-group-checkable">
                                         <span></span>
                                     </label>
@@ -43,13 +43,13 @@
                                 <th>الاسم</th>
                                 <th>
                                     الايميل</th>
-                                <th>Actions</th>
+                                <th>خيارات</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($items as $item)
                             <tr role="row" class="odd">
-                                <td width="5%" class=" dt-right" tabindex="0">
+                                <td width="5%" class="" tabindex="0">
                                     <label class="m-checkbox m-checkbox--single m-checkbox--solid m-checkbox--brand">
                                         <input type="checkbox" value="" class="m-checkable">
                                         <span></span>
@@ -57,7 +57,7 @@
                                 </td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->email }}</td>
-                                <td width="10%">
+                                <td>
                                     <a href='{{ route("user.edit",$item->id) }}'
                                         class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill"
                                         title="تعديل">

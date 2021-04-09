@@ -67,8 +67,8 @@
                                 m-dropdown-toggle="click">
                                 <a href="#" class="m-nav__link m-dropdown__toggle">
                                     <span class="m-topbar__userpic">
-                                        <img src="{{asset('metronic/assets/app/media/img/users/user123.png')}}"
-                                            class="m--img-rounded m--marginless  m-portlet m-portlet--bordered" alt="">
+                                        <img  src="{{asset('storage/assets/img/admins/'.auth()->user()->image)}}"
+                                            class="m--img-rounded m--marginless  m-portlet m-portlet--bordered" style="height:40.6px;" alt="">
                                     </span>
 
                                 </a>

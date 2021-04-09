@@ -55,37 +55,10 @@
                         <div class="row m-form">
                             <label class="col-3 col-form-label">الصورة الشخصية:</label>
                             <div class="col-7">
-                                <image src="{{asset('storage/user-images/'.$user->image)}}"
+                                <image src="{{asset('storage/assets/img/admins/'.$user->image)}}"
                                     style="width:auto; height:200px;" />
                             </div>
                         </div>
-                        @if(!empty($user->customer))
-                        <div class="row m-form">
-                            <label for="" class="col-3 col-form-label">المدينة:</label>
-                            <div class="col-7">
-                                <label class="col-form-label">{{$user->customer->city??''}}</label>
-                            </div>
-                        </div>
-                        <div class="row m-form">
-                            <label for="" class="col-3 col-form-label">العنوان:</label>
-                            <div class="col-7">
-                                <label class="col-form-label">{{$user->customer->address??''}}</label>
-                            </div>
-                        </div>
-                        <div class="row m-form">
-                            <label for="" class="col-3 col-form-label">رقم الهاتف المحمول:</label>
-                            <div class="col-7">
-                                <label class="col-form-label">{{$user->customer->mobile??''}}</label>
-                            </div>
-                        </div>
-                        <div class="row m-form">
-                            <label for="" class="col-3 col-form-label">رقم الهاتف:</label>
-                            <div class="col-7">
-                                <label class="col-form-label">{{$user->customer->phone??''}}</label>
-                            </div>
-                        </div>
-                        @endif
-
 
 
                     </div>
@@ -113,45 +86,12 @@
                             <div class="form-group m-form__group row">
                                 <label for="example-text-input" class="col-2 col-form-label">تغيير الصورة</label>
                                 <div class="col-7">
-                                    <image src="{{asset('storage/user-images/'.$user->image)}}"
+                                    <image class="mb-3" src="{{asset('storage/assets/img/admins/'.$user->image)}}"
                                         style="width:auto; height:100px;" id="display_user_image" />
                                     <br>
                                     <input class="form-control m-input" type="file" id="user_image" name="image">
                                 </div>
                             </div>
-                            @if(!empty($user->customer))
-                            <input class="" type="hidden" value="{{$user->customer->id}}" name="id">
-                            <div class="form-group m-form__group row">
-                                <label for="example-text-input" class="col-2 col-form-label">اسم المستخدم</label>
-                                <div class="col-7">
-                                    <input class="form-control m-input" type="text"
-                                        value="{{old('city',$user->customer->city)}}" name="city">
-                                </div>
-                            </div>
-                            <div class="form-group m-form__group row">
-                                <label for="example-text-input" class="col-2 col-form-label">اسم المستخدم</label>
-                                <div class="col-7">
-                                    <input class="form-control m-input" type="text"
-                                        value="{{old('address',$user->customer->address)}}" name="address">
-                                </div>
-                            </div>
-                            <div class="form-group m-form__group row">
-                                <label for="example-text-input" class="col-2 col-form-label">اسم المستخدم</label>
-                                <div class="col-7">
-                                    <input class="form-control m-input" type="text"
-                                        value="{{old('mobile',$user->customer->mobile)}}" name="mobile">
-                                </div>
-                            </div>
-                            <div class="form-group m-form__group row">
-                                <label for="example-text-input" class="col-2 col-form-label">اسم المستخدم</label>
-                                <div class="col-7">
-                                    <input class="form-control m-input" type="text"
-                                        value="{{old('phone',$user->customer->phone)}}" name="phone">
-                                </div>
-                            </div>
-                            @endif
-
-
 
                         </div>
                         <div class="m-portlet__foot m-portlet__foot--fit">
