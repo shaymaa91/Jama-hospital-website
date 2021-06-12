@@ -120,7 +120,7 @@
                             <div class="row">
                                 <div class="col-1 mr-3" id="uploaded-img">
                                     <img class="rounded" style="height:50px;width:50px"
-                                        src='{{asset("storage/assets/img/{$doctor->image}")}}'>
+                                        src='{{asset("storage/assets/img/doctors/{$doctor->image}")}}'>
                                 </div>
                                 <div class="col-6"> <input class=" pt-3" type='file' name="image" id="image" />
 

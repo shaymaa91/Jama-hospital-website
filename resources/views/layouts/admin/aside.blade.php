@@ -46,12 +46,12 @@
                         <li class="m-menu__item " aria-haspopup="true"><a href='{{route("Specialize.index")}}'
                                 class="m-menu__link "><i
                                     class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span
-                                    class="m-menu__link-text">ادارة الإختصاصات</span></a></li>
+                                    class="m-menu__link-text">ادارة الأقسام</span></a></li>
 
                         <li class="m-menu__item " aria-haspopup="true"><a href='{{route("Specialize.create")}}'
                                 class="m-menu__link "><i
                                     class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span
-                                    class="m-menu__link-text">إضافة أختصاص جديد</span></a></li>
+                                    class="m-menu__link-text">إضافة قسم جديد</span></a></li>
 
 
                     </ul>
@@ -137,12 +137,12 @@
                         <li class="m-menu__item " aria-haspopup="true"><a href='{{route("patients.index")}}'
                                 class="m-menu__link "><i
                                     class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span
-                                    class="m-menu__link-text">ادارة الحجوزات</span></a></li>
+                                    class="m-menu__link-text">ادارة الجداول</span></a></li>
 
                         <li class="m-menu__item " aria-haspopup="true"><a href='{{route("patients.create")}}'
                                 class="m-menu__link "><i
                                     class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span
-                                    class="m-menu__link-text">إضافة حجز </span></a></li>
+                                    class="m-menu__link-text">إضافة جدولة </span></a></li>
 
 
                     </ul>
@@ -202,12 +202,12 @@
                         <li class="m-menu__item " aria-haspopup="true"><a href='{{route("patients.index")}}'
                                 class="m-menu__link "><i
                                     class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span
-                                    class="m-menu__link-text">ادارة الأخبار</span></a></li>
+                                    class="m-menu__link-text">ادارة الصيدلية</span></a></li>
 
                         <li class="m-menu__item " aria-haspopup="true"><a href='{{route("patients.create")}}'
                                 class="m-menu__link "><i
                                     class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span
-                                    class="m-menu__link-text">إضافة خبر جديد </span></a></li>
+                                    class="m-menu__link-text">إضافة دواء جديد </span></a></li>
 
 
                     </ul>
@@ -225,12 +225,12 @@
                         <li class="m-menu__item " aria-haspopup="true"><a href='{{route("patients.index")}}'
                                 class="m-menu__link "><i
                                     class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span
-                                    class="m-menu__link-text">ادارة الأخبار</span></a></li>
+                                    class="m-menu__link-text">ادارة الأدوات والمعدات</span></a></li>
 
                         <li class="m-menu__item " aria-haspopup="true"><a href='{{route("patients.create")}}'
                                 class="m-menu__link "><i
                                     class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span
-                                    class="m-menu__link-text">إضافة خبر جديد </span></a></li>
+                                    class="m-menu__link-text">إضافة معدات جديدة </span></a></li>
 
 
                     </ul>

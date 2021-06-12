@@ -6,7 +6,7 @@
 		<meta name="description" content="Latest updates and statistic charts">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
 
-		
+
 		<link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
 
@@ -51,7 +51,7 @@
 				border:none;
 				margin-top:25px;
 				border-bottom:1px solid #ebedf2;
-				
+
 			}
 			.my-active span{
 				background-color: #00c5dc !important;
@@ -63,7 +63,7 @@
 				opacity: 1;
 				-webkit-transition: opacity .15s linear;
 				-o-transition: opacity .15s linear;
-				transition: opacity .15s linear;		
+				transition: opacity .15s linear;
 			}
 			.sorting{
 				text-align:center;
@@ -76,11 +76,11 @@
 			}
 			select.form-control{
 				padding-top:5px;
-			}	
+			}
             .custom-arrow-style {
                 right: auto !important;
                 left: 13px !important;
-            }		
+            }
         </style>
         @yield("css")
     </head>
@@ -118,7 +118,7 @@
 
 						@include("layouts.shared.msg")
                         @yield("content")
-						
+
 					</div>
 				</div>
 			</div>
@@ -128,7 +128,7 @@
 			@include("layouts.admin.footer")
 		</div>
 
-		
+
 
 		<!-- begin::Scroll Top -->
 		<div id="m_scroll_top" class="m-scroll-top">
@@ -136,7 +136,7 @@
 		</div>
 
 
-		
+
 		<!--begin::Global Theme Bundle -->
 		<script src="{{asset('metronic/assets/vendors/base/vendors.bundle.js')}}" type="text/javascript"></script>
 		<script src="{{asset('metronic/assets/demo/default/base/scripts.bundle.js')}}" type="text/javascript"></script>
@@ -149,6 +149,7 @@
 
     <!--begin::Page Scripts -->
     <script src="{{asset('metronic/assets/app/js/dashboard.js')}}" type="text/javascript"></script>
+    
 
     <!--end::Page Scripts -->
     @yield("js")

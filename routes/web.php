@@ -32,6 +32,7 @@ use App\Http\Controllers\Admin\JamaNewsController;
 //     return view('welcome');
 // });
 Route::get('/',[HomePageController::class,'index'])->name("front.home.page");
+Route::get('/getDoctorList',[HomePageController::class,'getDoctorList']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

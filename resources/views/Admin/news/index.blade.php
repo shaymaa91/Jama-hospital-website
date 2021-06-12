@@ -66,7 +66,7 @@
 
                                 <td>{{$jama->title }}</td>
                                 <td>{{$jama->created_at}}</td>
-                                <td><img height=50 width= 50 src='{{asset("storage/assets/img/news/{$jama->image}")}}' alt=""></td>
+                                <td><img height=50 width= 50 src='{{asset("storage/assets/img/news/{$jama->news_img}")}}' alt=""></td>
                                 <td>{{$jama->auth_name}}</td>
                                 <td>
                                     <a class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only"
